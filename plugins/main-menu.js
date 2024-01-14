@@ -33,48 +33,38 @@ import {
           
  █▀▄▀█ █▀▄
  █░▀░█ █▄▀
- 
-╭─────────────────⦿
-┃    🔰〘 𝙄𝙉𝙁𝙊 〙🔰
-╰┬────────────────⦿
-┌┤
-┃
-┃ *_Founder_*: Salman Ahmad 
-┃ *_Bot Name_*: ${botname}
-┃ *_Mode_*: %mode
-┃ *_HOST_*: kali Linix
-┃ *_Type_*: NodeJs
-┃ *_Baileys_*: Multi Device
-┃ *_Prefix_*: [ *%_p* ]
-┃ *_Uptime_*: %muptime
-┃ *_Database_*:  %totalreg
-┃
-╰──────────────────⦿
-╭──────────────────⦿
-┃    🔰〘 𝙐𝙎𝙀𝙍 〙🔰
-╰┬─────────────────⦿
-┌┤     
-┃
-┃ *_Name_*: %name
-┃ *_Gold_*: %credit
-┃ *_Role_*: XLICON-MD-TESTER
-┃ *_Level_*: %level [ %xp4levelup Xp For Levelup]
-┃ *_Xp_*: %exp / %maxexp
-┃ *_Total Xp_*: %totalexp
-┃
-╰──────────────────⦿
-╭──────────────────⦿
-┃   🔰〘 𝑰𝑵𝑭𝑶 𝑪𝑴𝑫 〙🔰
-╰┬─────────────────⦿
-┌┤ 
-┃ *_%totalfeatures_* Commands
-╰──────────────────⦿
+
+      🔰〘 𝙄𝙉𝙁𝙊 〙🔰
+╭──────────────▸
+➫ *_Founder_*: Salman Ahmad 
+➫ *_Bot Name_*: ${botname}
+➫ *_Mode_*: %mode
+➫ *_HOST_*: kali Linix
+➫ *_Type_*: NodeJs
+➫ *_Baileys_*: Multi Device
+➫ *_Prefix_*: [ *%_p* ]
+➫ *_Uptime_*: %muptime
+➫ *_Database_*:  %totalreg
+╰───────────────▸ 
+      🔰〘 𝙐𝙎𝙀𝙍 〙🔰
+╭──────────────▸
+➫ *_Name_*: %name
+➫ *_Gold_*: %credit
+➫ *_Role_*: XLICON-MD-TESTER
+➫ *_Level_*: %level [ %xp4levelup Xp For Levelup]
+➫ *_Xp_*: %exp / %maxexp
+➫ *_Total Xp_*: %totalexp
+╰──────────────▸
 
 
+     🔰〘 𝑰𝑵𝑭𝑶 𝑪𝑴𝑫 〙🔰
+╭───────────────▸ 
+➫ %totalfeatures Commands
+╰───────────────▸
  `.trimStart(),
- header: "┌─⦿『 *_%category_* 』⦿",
- body: "┃⬡▸ %cmd %isPremium %islimit",
- footer: "╰─────────────────⦿",
+ header: "🔰〘 *_%category_*  〙🔰",
+ body: "⬡▸ %cmd %isPremium %islimit",
+ footer: " ╰───────────────▸",
  after: "\n%me",
  }
  let handler = async (m, {
@@ -98,7 +88,7 @@ import {
    let glb = global.db.data.users
    let usrs = glb[m.sender]
    let tag = `@${m.sender.split("@")[0]}`
-   let mode = process.env.MODE || (global.opts["self"] ? "Private" : "Public");
+   let mode = global.opts["self"] ? "Private" : "Public"
    let _package = JSON.parse(await promises.readFile(join(__dirname, "../package.json")).catch(_ => ({}))) || {}
    let {
  age,
@@ -268,4 +258,4 @@ import {
    res = "Good Night 🌙"
   }
   return res
- }
+   }
